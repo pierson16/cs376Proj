@@ -14,9 +14,40 @@ void printLines(char** a) {
   }
 }
 
+//reverseLines
+void reverseLines(char** a) {
+  int i;
+  int j;
+  char** temp;
+  for (i = 0; a[i] != NULL; i++);
+
+  for (j = 0; j < (i/2); j++) {
+      temp = a[i-j-1];
+      a[i-j-1] = a[j];
+      a[j] = temp;
+  }
+}
+
+// remove consecutive identical lines
+ void removeIdent(char** a){
+   int i;
+   int j;
+   for (i = 1; a[i] != NULL; i++){
+     if(strcmp(a[i], a[i-1]) == 0){
+       for(j=i; a[j+1] != NULL; j++) {
+	 a[j] =a[j+1];
+       }   
+       a[j] = NULL;
+     }
+   }
+   printf("\n");
+}
+
 // our array that tells how command-strings map to functions
 commandMap map[] = {
   {"-p", printLines},
+  {"-r", reverseLines},
+  {"-i", removeIdent},
   {NULL, NULL},
 };
 
