@@ -18,7 +18,7 @@ void printLines(char** a) {
   }
 }
 
-<<<<<<< HEAD
+
 //reverseLines
 void reverseLines(char** a) {
   int i;
@@ -47,23 +47,17 @@ void reverseLines(char** a) {
    }
    printf("\n");
 }
-
-=======
 void encrypt(char**a);
 void decrypt(char**a);
->>>>>>> f436ac03ff2f1a085295856613baec5cbc084e86
 // our array that tells how command-strings map to functions
 commandMap map[] = {
   {"-e", encrypt},
   {"-d", decrypt},
   {"-p", printLines},
-<<<<<<< HEAD
   {"-r", reverseLines},
   {"-i", removeIdent},
-=======
   {"-s", strcmpOrder},
   {"-l", lengthOrder},
->>>>>>> f436ac03ff2f1a085295856613baec5cbc084e86
   {NULL, NULL},
 };
 
