@@ -49,6 +49,10 @@ void reverseLines(char** a) {
    printf("\n");
 }
 
+void encrypt(char**a);
+void decrypt(char**a);
+
+
 
 void encrypt(char**a);
 void decrypt(char**a);
@@ -58,6 +62,14 @@ commandMap map[] = {
   {"-e", encrypt},
   {"-d", decrypt},
   {"-p", printLines},
+<<<<<<< HEAD
+=======
+  {"-r", reverseLines},
+  {"-i", removeIdent},
+  {"-s", strcmpOrder},
+  {"-l", lengthOrder},
+
+>>>>>>> 7319388ca57abcb7385d8a2d5950a29d7fb7b16e
   {"-u", toUpper},
   {"-rr", reverse},
   {"-t", trim},
@@ -65,6 +77,11 @@ commandMap map[] = {
   {"-i", removeIdent},
   {"-s", strcmpOrder},
   {"-l", lengthOrder},
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7319388ca57abcb7385d8a2d5950a29d7fb7b16e
   {NULL, NULL},
 };
 
