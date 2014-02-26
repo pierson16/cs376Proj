@@ -58,18 +58,13 @@ commandMap map[] = {
   {"-e", encrypt},
   {"-d", decrypt},
   {"-p", printLines},
-
   {"-u", toUpper},
   {"-rr", reverse},
   {"-t", trim},
-
-
   {"-r", reverseLines},
   {"-i", removeIdent},
-
   {"-s", strcmpOrder},
   {"-l", lengthOrder},
-
   {NULL, NULL},
 };
 
