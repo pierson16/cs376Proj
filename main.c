@@ -4,6 +4,7 @@
 #include <string.h>
 #include "readLine.h"
 #include "execCmds.h"
+#include "taylorWork.h"
 
 // print the elements in the array, up to (but not including) the first
 // NULL entry
@@ -17,6 +18,9 @@ void printLines(char** a) {
 // our array that tells how command-strings map to functions
 commandMap map[] = {
   {"-p", printLines},
+  {"-u", toUpper},
+  {"-rr", reverse},
+  {"-t", trim},
   {NULL, NULL},
 };
 
@@ -24,7 +28,7 @@ commandMap map[] = {
 int main(int argc, char* argv[]) {
   // read lines from standard input
   char** lines = readLines();
-
+ 
   // execute each command on the command line
   executeCommands(lines, map, argv);
 
