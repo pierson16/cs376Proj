@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+        this CAT 
+	pOrtland Pilots
+CS 376 is the Class I am in.
+=======
+<<<<<<< HEAD
 asdkfjaskldfjaklsdf
 asdkfjaskldfjaklsdf
 test
@@ -20,3 +25,4 @@ f jieowa
 gjieoarn 
 df
 >>>>>>> a7942e889f92efc2f98fc4487fc3453d69d12564
+>>>>>>> 60c7261850d8111faf5a2aab7d21208ae0f62bb1

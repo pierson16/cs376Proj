@@ -4,6 +4,7 @@
 #include <string.h>
 #include "readLine.h"
 #include "execCmds.h"
+#include "taylorWork.h"
 #include "lengthOrder.h"
 #include "strcmpOrder.h"
 
@@ -47,8 +48,15 @@ void reverseLines(char** a) {
    }
    printf("\n");
 }
+
 void encrypt(char**a);
 void decrypt(char**a);
+
+
+
+void encrypt(char**a);
+void decrypt(char**a);
+
 // our array that tells how command-strings map to functions
 commandMap map[] = {
   {"-e", encrypt},
@@ -58,6 +66,19 @@ commandMap map[] = {
   {"-i", removeIdent},
   {"-s", strcmpOrder},
   {"-l", lengthOrder},
+
+  {"-u", toUpper},
+  {"-rr", reverse},
+  {"-t", trim},
+
+
+  {"-r", reverseLines},
+  {"-i", removeIdent},
+
+  {"-s", strcmpOrder},
+  {"-l", lengthOrder},
+
+
   {NULL, NULL},
 };
 
@@ -107,7 +128,7 @@ void decrypt(char**a)
 int main(int argc, char* argv[]) {
   // read lines from standard input
   char** lines = readLines();
-
+ 
   // execute each command on the command line
   executeCommands(lines, map, argv);
 
