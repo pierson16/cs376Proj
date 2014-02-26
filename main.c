@@ -4,9 +4,13 @@
 #include <string.h>
 #include "readLine.h"
 #include "execCmds.h"
+#include "lengthOrder.h"
+#include "strcmpOrder.h"
 
+//PERSON 4: Emily Nitzberg
 // print the elements in the array, up to (but not including) the first
 // NULL entry
+
 void printLines(char** a) {
   int i;
   for (i = 0; a[i] != NULL; i++) {
@@ -14,6 +18,7 @@ void printLines(char** a) {
   }
 }
 
+<<<<<<< HEAD
 //reverseLines
 void reverseLines(char** a) {
   int i;
@@ -43,13 +48,66 @@ void reverseLines(char** a) {
    printf("\n");
 }
 
+=======
+void encrypt(char**a);
+void decrypt(char**a);
+>>>>>>> f436ac03ff2f1a085295856613baec5cbc084e86
 // our array that tells how command-strings map to functions
 commandMap map[] = {
+  {"-e", encrypt},
+  {"-d", decrypt},
   {"-p", printLines},
+<<<<<<< HEAD
   {"-r", reverseLines},
   {"-i", removeIdent},
+=======
+  {"-s", strcmpOrder},
+  {"-l", lengthOrder},
+>>>>>>> f436ac03ff2f1a085295856613baec5cbc084e86
   {NULL, NULL},
 };
+
+void encrypt(char**a)
+{
+  int j;
+  int i;
+  for(i = 0; a[i] != NULL; i++)
+    {
+      for(j = 0; a[i][j] != '\0'; j++)
+	{
+	  if(a[i][j] > 32)
+	    {
+	      a[i][j] += 1;
+	      if(a[i][j] == 127)
+		{
+		  a[i][j] = 33;
+		}
+	    }
+	}
+      
+    }
+}
+
+void decrypt(char**a)
+{
+  int j;
+  int i;
+  for(i = 0; a[i] != NULL; i++)
+    {
+      for(j = 0; a[i][j] != '\0'; j++)
+	{
+	  if(a[i][j] > 33)
+	    {
+	      a[i][j] -= 1;
+	      if(a[i][j] == 32)
+		{
+		  a[i][j] = 126;
+		}
+	    }
+	}
+      
+    }
+}
 
 // main function
 int main(int argc, char* argv[]) {
